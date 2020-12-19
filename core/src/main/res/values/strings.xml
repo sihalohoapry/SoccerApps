@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SoccerApps</string>
+    <string name="title_teams">Teams</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="dummy">Dummy</string>
+    <string name="logoTeam">Logo Team</string>
+    <string name="photoStudio">Photo Studio</string>
+</resources>
