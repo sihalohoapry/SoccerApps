@@ -1,12 +1,16 @@
 package com.sihaloho.soccerapps.ui.detail
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.sihaloho.soccerapps.R
 import com.sihaloho.core.domain.model.Team
 import com.sihaloho.soccerapps.databinding.ActivityDetailTeamBinding
+import kotlinx.android.synthetic.main.activity_detail_team.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailTeamActivity : AppCompatActivity() {
@@ -44,9 +48,17 @@ class DetailTeamActivity : AppCompatActivity() {
             var statusFavorite = detailTeam.isFavorite
             setStatusFavorite(statusFavorite)
             binding.fab.setOnClickListener {
+                if (statusFavorite){
+                    val snackbar = Snackbar.make(detail_layout, "Remove from favorite team", Snackbar.LENGTH_LONG)
+                    snackbar.show()
+                }else{
+                    val snackbar = Snackbar.make(detail_layout, "Add to favorite team", Snackbar.LENGTH_LONG)
+                    snackbar.show()
+                }
                 statusFavorite = !statusFavorite
                 detailTeamViewModel.setFavoriteTeam(detailTeam, statusFavorite)
                 setStatusFavorite(statusFavorite)
+
             }
         }
 
@@ -54,8 +66,10 @@ class DetailTeamActivity : AppCompatActivity() {
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
             binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite))
+
         } else {
             binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_no_favorite))
+
         }
     }
 }
