@@ -1,0 +1,5 @@
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapbox_access_token">pk.eyJ1Ijoic2loYWxvaG8iLCJhIjoiY2tqOWk1MG8yMWVueTJxcWcydnB3amxxNiJ9.Sqve7-E6CytQxO3dbz1mUg</string>
+
+</resources>

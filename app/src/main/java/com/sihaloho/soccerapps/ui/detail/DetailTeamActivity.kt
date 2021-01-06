@@ -8,7 +8,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.sihaloho.soccerapps.R
 import com.sihaloho.core.domain.model.Team
 import com.sihaloho.soccerapps.databinding.ActivityDetailTeamBinding
-import kotlinx.android.synthetic.main.activity_detail_team.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailTeamActivity : AppCompatActivity() {
@@ -47,10 +46,10 @@ class DetailTeamActivity : AppCompatActivity() {
             setStatusFavorite(statusFavorite)
             binding.fab.setOnClickListener {
                 if (statusFavorite){
-                    val snackbar = Snackbar.make(detail_layout, "Remove from favorite team", Snackbar.LENGTH_LONG)
+                    val snackbar = Snackbar.make(binding.detailLayout, "Remove from favorite team", Snackbar.LENGTH_LONG)
                     snackbar.show()
                 }else{
-                    val snackbar = Snackbar.make(detail_layout, "Add to favorite team", Snackbar.LENGTH_LONG)
+                    val snackbar = Snackbar.make(binding.detailLayout, "Add to favorite team", Snackbar.LENGTH_LONG)
                     snackbar.show()
                 }
                 statusFavorite = !statusFavorite

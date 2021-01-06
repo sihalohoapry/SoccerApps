@@ -17,4 +17,10 @@
         android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite_team" />
 
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.sihaloho.soccerapps.maps.MapsFragment"
+        android:label="@string/title_maps"
+        tools:layout="@layout/fragment_maps" />
+
 </navigation>
