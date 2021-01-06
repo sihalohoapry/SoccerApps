@@ -1,4 +1,3 @@
-include ':maps'
 include ':favorite'
 include ':core'
 include ':app'
