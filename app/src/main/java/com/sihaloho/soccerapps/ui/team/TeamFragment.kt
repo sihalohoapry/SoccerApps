@@ -1,15 +1,12 @@
 package com.sihaloho.soccerapps.ui.team
 
 import android.content.Intent
-import android.nfc.NfcAdapter.EXTRA_DATA
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sihaloho.soccerapps.R
 import com.sihaloho.core.data.Resource
 import com.sihaloho.core.ui.TeamAdapter
 import com.sihaloho.soccerapps.databinding.FragmentHomeBinding
@@ -28,7 +25,7 @@ class TeamFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }

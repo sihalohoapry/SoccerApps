@@ -51,6 +51,8 @@
                 <include layout="@layout/item_list_placeholder" />
                 <include layout="@layout/item_list_placeholder" />
                 <include layout="@layout/item_list_placeholder" />
+                <include layout="@layout/item_list_placeholder" />
+                <include layout="@layout/item_list_placeholder" />
             </LinearLayout>
         </ScrollView>
     </com.facebook.shimmer.ShimmerFrameLayout>
