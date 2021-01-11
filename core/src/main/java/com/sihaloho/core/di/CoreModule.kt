@@ -8,6 +8,8 @@ import com.sihaloho.core.data.source.remote.RemoteDataSource
 import com.sihaloho.core.data.source.remote.network.ApiService
 import com.sihaloho.core.domain.repository.ITeamRepository
 import com.sihaloho.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -20,10 +22,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<TeamDatabase>().teamDao() }
     single {
+        val passphrase : ByteArray = SQLiteDatabase.getBytes("sihaloho".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
                 androidContext(),
                 TeamDatabase::class.java, "Team.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
